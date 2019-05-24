@@ -139,7 +139,7 @@ class EndpointConfig(object):
                     raise ClientResponseError(
                         resp.status, resp.reason, await resp.content.read()
                     )
-                return await resp.json()
+                return await resp.json(content_type=None)
 
     @classmethod
     def from_dict(cls, data):
